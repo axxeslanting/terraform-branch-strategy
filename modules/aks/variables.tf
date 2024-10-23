@@ -8,12 +8,10 @@ variable "env_prefix" {
   description = "environment prefix for all resources"
 }
 
-variable "postgres_admin_password" {
+variable "resource_group_name" {
   type = string
-  sensitive = true
 }
 
-variable "postgres_server_zone" {
+variable "virtual_network_name" {
   type = string
-  default = "2"
 }
