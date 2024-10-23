@@ -25,6 +25,7 @@ env:
   TFSTATE_BRANCH: ${{ github.base_ref || github.ref_name }} 
   TF_VAR_env_prefix: ${{ vars.ENV_PREFIX }}
   TF_VAR_prefix: ${{ vars.PREFIX }} 
+  TF_VAR_postgres_admin_password: ${{ secrets.POSTGRES_ADMIN_PASSWORD }}
 
 jobs:
   terraform-plan:
