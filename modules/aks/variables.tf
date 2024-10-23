@@ -7,3 +7,11 @@ variable "env_prefix" {
   type = string
   description = "environment prefix for all resources"
 }
+
+variable "resource_group_name" {
+  type = string
+}
+
+variable "virtual_network_name" {
+  type = string
+}

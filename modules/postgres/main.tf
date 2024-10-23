@@ -1,3 +1,12 @@
+data "azurerm_resource_group" "rg-tfworkshops" {
+  name = var.resource_group_name
+}
+
+data "azurerm_virtual_network" "vn" {
+  name = var.virtual_network_name
+  resource_group_name = data.azurerm_resource_group.rg-tfworkshops.name
+}
+
 resource "azurerm_subnet" "postgres-sn" {
   name                 = "postgres-sn"
   resource_group_name  = data.azurerm_resource_group.rg-tfworkshops.name

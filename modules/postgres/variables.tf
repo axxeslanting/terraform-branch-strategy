@@ -8,6 +8,13 @@ variable "env_prefix" {
   description = "environment prefix for all resources"
 }
 
+variable "resource_group_name" {
+  type = string
+}
+
+variable "virtual_network_name" {
+  type = string
+}
 
 variable "postgres_admin_login" {
   type = string
