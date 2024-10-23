@@ -7,7 +7,7 @@ resource "azurerm_virtual_network" "vn" {
   location            = data.azurerm_resource_group.rg-tfworkshops.location
 
   name          = "${var.prefix}-${var.env_prefix}-vn"
-  address_space = ["10.0.0.0/24"]
+  address_space = ["10.0.0.0/8"]
 }
 
 resource "azurerm_subnet" "nodepool-sn" {
