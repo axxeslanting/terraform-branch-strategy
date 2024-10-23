@@ -61,12 +61,12 @@ jobs:
         echo "Saving state to ${{ vars.TFSTATE_OWNER }}-$TFSTATE_BRANCH.terraform.tfstate"
         terraform init -backend-config="key=${{ vars.TFSTATE_OWNER }}-$TFSTATE_BRANCH.terraform.tfstate"
 
-    # Save .terraform.lock.hcl to artifacts
-    - name: Publish Terraform Lock File
-      uses: actions/upload-artifact@v4
-      with:
-        name: terraform-lock-hcl
-        path: '.terraform.lock.hcl'
+    # # Save .terraform.lock.hcl to artifacts
+    # - name: Publish Terraform Lock File
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: terraform-lock-hcl
+    #     path: '.terraform.lock.hcl'
 
     # Validate Terraform code
     - name: Terraform Validate
@@ -154,12 +154,12 @@ jobs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
 
-    # Download saved plan from artifacts  
-    - name: Download Terraform Lock file
-      uses: actions/download-artifact@v4
-      with:
-        name: terraform-lock-hcl
-        path: '.terraform.lock.hcl'
+    # # Download saved plan from artifacts  
+    # - name: Download Terraform Lock file
+    #   uses: actions/download-artifact@v4
+    #   with:
+    #     name: terraform-lock-hcl
+    #     path: '.terraform.lock.hcl'
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
