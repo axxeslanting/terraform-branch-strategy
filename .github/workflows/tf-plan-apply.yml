@@ -90,6 +90,13 @@ jobs:
       with:
         name: tfplan
         path: tfplan
+    
+    # Save .terraform.lock.hcl to artifacts
+    - name: Publish Terraform Plan
+      uses: actions/upload-artifact@v4
+      with:
+        name: terraform-lock-hcl
+        path: .terraform.lock.hcl
         
     # Create string output of Terraform Plan
     - name: Create String Output
@@ -157,6 +164,12 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: tfplan
+
+    # Download saved plan from artifacts  
+    - name: Download Terraform Plan
+      uses: actions/download-artifact@v4
+      with:
+        name: terraform-lock-hcl
 
     # Terraform Apply
     - name: Terraform Apply
