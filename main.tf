@@ -17,6 +17,8 @@ module "aks" {
   env_prefix = var.env_prefix
   resource_group_name = data.azurerm_resource_group.rg-tfworkshops.name
   virtual_network_name = azurerm_virtual_network.vn.name
+
+  depends_on = [ azurerm_virtual_network.vn ]
 }
 
 module "postgres" {
@@ -29,4 +31,6 @@ module "postgres" {
 
   postgres_admin_password = var.postgres_admin_password
   server_zone = 1
+
+  depends_on = [ azurerm_virtual_network.vn ]
 }
