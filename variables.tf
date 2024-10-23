@@ -7,3 +7,38 @@ variable "env_prefix" {
   type = string
   description = "environment prefix for all resources"
 }
+
+variable "postgres_admin_login" {
+  type = string
+  default = "psqladmin"
+}
+
+variable "postgres_admin_password" {
+  type = string
+  sensitive = true
+}
+
+variable "server_zone" {
+  type = string
+  default = "2"
+}
+
+variable "server_storage" {
+  type = number
+  default = 32768
+}
+
+variable "storage_tier" {
+  type = string
+  default = "P4"
+}
+
+variable "storage_auto_grow" {
+  type = bool
+  default = true
+}
+
+variable "server_sku" {
+  type = string
+  default = "B_Standard_B1ms"
+}
