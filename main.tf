@@ -34,4 +34,6 @@ resource "azurerm_kubernetes_cluster" "aks" {
   identity {
     type = "SystemAssigned"
   }
+
+  sku_tier = "Standard"
 }
