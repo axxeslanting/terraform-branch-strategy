@@ -55,7 +55,7 @@ jobs:
       id: init
       run: |
         echo "Saving state to ${{ vars.TFSTATE_OWNER }}-$TFSTATE_BRANCH.terraform.tfstate"
-        TF_LOG=TRACE terraform init -backend-config="key={{ vars.TFSTATE_OWNER }}-$TFSTATE_BRANCH.terraform.tfstate"
+        TF_LOG=TRACE terraform init -backend-config="key=${{ vars.TFSTATE_OWNER }}-$TFSTATE_BRANCH.terraform.tfstate"
 
 
     # Validate Terraform code
