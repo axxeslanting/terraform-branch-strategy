@@ -15,7 +15,9 @@ env:
   ARM_SUBSCRIPTION_ID: "${{ secrets.ARM_SUBSCRIPTION_ID }}"
   ARM_TENANT_ID: "${{ secrets.ARM_TENANT_ID }}"
   ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-  TFSTATE_BRANCH: ${{ github.base_ref || github.ref_name }} 
+  TFSTATE_BRANCH: ${{ github.base_ref || github.ref_name }}
+  TF_VAR_env_prefix: ${{ vars.ENV_PREFIX }}
+  TF_VAR_prefix: ${{ vars.PREFIX }} 
 
 jobs:
   terraform-destroy-plan:
