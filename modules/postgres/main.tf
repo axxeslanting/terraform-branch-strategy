@@ -10,7 +10,7 @@ data "azurerm_virtual_network" "vn" {
 resource "azurerm_subnet" "postgres-sn" {
   name                 = "postgres-sn"
   resource_group_name  = data.azurerm_resource_group.rg-tfworkshops.name
-  virtual_network_name = azurerm_virtual_network.vn.name
+  virtual_network_name = data.azurerm_virtual_network.vn.name
   address_prefixes     = ["10.2.0.0/24"]
   service_endpoints    = ["Microsoft.Storage"]
   delegation {
@@ -32,7 +32,7 @@ resource "azurerm_private_dns_zone" "postgres-dns-zone" {
 resource "azurerm_private_dns_zone_virtual_network_link" "postgres-dns-zone-link" {
   name = "${var.prefix}-${var.env_prefix}-vnet-postgres-link"
   private_dns_zone_name = azurerm_private_dns_zone.postgres-dns-zone.name
-  virtual_network_id = azurerm_virtual_network.vn.id
+  virtual_network_id = data.azurerm_virtual_network.vn.id
   resource_group_name = data.azurerm_resource_group.rg-tfworkshops.name
 }
 

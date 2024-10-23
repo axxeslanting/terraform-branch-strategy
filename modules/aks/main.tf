@@ -10,7 +10,7 @@ data "azurerm_virtual_network" "vn" {
 resource "azurerm_subnet" "nodepool-sn" {
   name                 = "nodepool-sn"
   resource_group_name  = data.azurerm_resource_group.rg-tfworkshops.name
-  virtual_network_name = azurerm_virtual_network.vn.name
+  virtual_network_name = data.azurerm_virtual_network.vn.name
   address_prefixes     = ["10.1.0.0/16"]
 }
 
