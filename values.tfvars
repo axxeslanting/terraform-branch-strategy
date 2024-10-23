@@ -1,4 +1,4 @@
 prefix = "lorenzo"
-env_prefix = "main"
+env_prefix = "prd"
 
 postgres_admin_login = "psqladminprd"
