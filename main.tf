@@ -3,7 +3,7 @@ data "azurerm_resource_group" "rg-tfworkshops" {
 }
 
 locals {
-  location = "germanynorth"
+  location = "germanywestcentral"
 }
 
 resource "azurerm_virtual_network" "vn" {
@@ -13,8 +13,6 @@ resource "azurerm_virtual_network" "vn" {
   name          = "${var.prefix}-${var.env_prefix}-vn"
   address_space = ["10.0.0.0/8"]
 }
-
-
 
 # module "aks" {
 #   source = "./modules/aks"
