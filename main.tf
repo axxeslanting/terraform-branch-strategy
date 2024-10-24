@@ -14,6 +14,7 @@ resource "azurerm_virtual_network" "vn" {
   address_space = ["10.0.0.0/8"]
 }
 
+
 # module "aks" {
 #   source = "./modules/aks"
 
