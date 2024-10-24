@@ -13,7 +13,7 @@ variable "postgres_admin_password" {
   sensitive = true
 }
 
-# variable "postgres_server_zone" {
-#   type = string
-#   default = "2"
-# }
+variable "postgres_server_zone" {
+  type = string
+  default = "2"
+}

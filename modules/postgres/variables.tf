@@ -50,3 +50,7 @@ variable "server_sku" {
   type = string
   default = "B_Standard_B1ms"
 }
+
+variable "location" {
+  type = string
+}
